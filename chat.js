@@ -2,51 +2,64 @@ window.onload = function () {
 
     let name = localStorage.getItem("name");
 
-    if (name) {
-        document.getElementById("welcome").innerHTML = "Welcome, " + name;
-    } else {
-        document.getElementById("welcome").innerHTML = "Welcome, Guest";
+    document.getElementById("welcome").innerHTML =
+        "Welcome, " + (name || "Guest");
+
+    loadMessages();
+
+}
+
+function sendMessage(){
+
+    let input=document.getElementById("input");
+    let messages=document.getElementById("messages");
+
+    let text=input.value.trim();
+
+    if(text==="") return;
+
+    messages.innerHTML += `
+    <div class="user-msg">${text}</div>
+    `;
+
+    messages.innerHTML += `
+    <div class="ai-msg">
+    Hello! I'm Rehan AI. I'm still under development.
+    </div>
+    `;
+
+    localStorage.setItem("chatHistory",messages.innerHTML);
+
+    input.value="";
+
+    messages.scrollTop=messages.scrollHeight;
+
+}
+
+function loadMessages(){
+
+    let history=localStorage.getItem("chatHistory");
+
+    if(history){
+
+        document.getElementById("messages").innerHTML=history;
+
     }
 
 }
 
-function sendMessage() {
+function logout(){
 
-    let input = document.getElementById("input");
-    let messages = document.getElementById("messages");
+    window.location.href="login.html";
 
-    let text = input.value.trim();
+}
 
-    if (text === "") return;
+document.getElementById("input").addEventListener("keypress",function(e){
 
-    messages.innerHTML += `
-        <div class="user-msg">${text}</div>
-    `;
-document.getElementById("input").addEventListener("keypress", function(event){
+    if(e.key==="Enter"){
 
-    if(event.key === "Enter"){
         sendMessage();
+
     }
 
 });
-    setTimeout(function () {
-
-        messages.innerHTML += `
-            <div class="ai-msg">
-                Hello! I'm Rehan AI. I'm still under development.
-            </div>
-        `;
-
-        messages.scrollTop = messages.scrollHeight;
-
-    }, 500);
-
-    input.value = "";
-
-}
-
-function logout() {
-
-    window.location.href = "login.html";
-
-}
