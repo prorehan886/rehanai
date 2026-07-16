@@ -76,3 +76,24 @@ function newChat(){
     localStorage.removeItem("chatHistory");
 
 }
+function startVoice(){
+
+    if(!('webkitSpeechRecognition' in window)){
+        alert("Voice recognition is not supported in this browser.");
+        return;
+    }
+
+    const recognition = new webkitSpeechRecognition();
+
+    recognition.lang = "en-US";
+
+    recognition.start();
+
+    recognition.onresult = function(event){
+
+        document.getElementById("input").value =
+        event.results[0][0].transcript;
+
+    };
+
+}
