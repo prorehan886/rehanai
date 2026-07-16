@@ -1,77 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rehan AI Chat</title>
-
-<link rel="stylesheet" href="chat.css">
-
-</head>
-
-<body>
-
-<div class="sidebar">
-
-<h2 class="logo">Rehan AI</h2>
-
-<button class="new-chat">
-+ New Chat
-</button>
-
-</div>
-
-<div class="main">
-
 <div class="header">
-Rehan AI Assistant
-</div>
 
-<div class="messages" id="messages">
+<span id="welcome"></span>
 
-<p>👋 Hello! I'm Rehan AI.</p>
-<p>How can I help you today?</p>
-
-</div>
-
-<div class="input-box">
-
-<input
-type="text"
-id="input"
-placeholder="Message Rehan AI...">
-
-<button onclick="sendMessage()">
-Send
+<button onclick="logout()" class="logout-btn">
+Logout
 </button>
 
 </div>
-
-</div>
-
-<script>
-
-function sendMessage(){
-
-let input=document.getElementById("input");
-
-let messages=document.getElementById("messages");
-
-if(input.value=="") return;
-
-messages.innerHTML +=
-"<p><b>You:</b> "+input.value+"</p>";
-
-messages.innerHTML +=
-"<p><b>Rehan AI:</b> I'm still under development.</p>";
-
-input.value="";
-
-messages.scrollTop=messages.scrollHeight;
-
-}
-
-</script>
-
-</body>
-</html> <script src="chat.js"></script>
