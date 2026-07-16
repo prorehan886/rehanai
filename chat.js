@@ -68,3 +68,4 @@ function addHistory(text){
     history.prepend(item);
 
 }
+addHistory(text);
