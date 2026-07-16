@@ -79,3 +79,20 @@ Send
     font-size:18px;
     cursor:pointer;
 }
+.history{
+    margin-top:20px;
+}
+
+.history-item{
+    background:#1e293b;
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:8px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+}
+
+.history-item:hover{
+    background:#2563eb;
+}
