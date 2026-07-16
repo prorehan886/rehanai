@@ -1,3 +1,15 @@
+window.onload = function () {
+
+    let name = localStorage.getItem("name");
+
+    if (name) {
+        document.getElementById("welcome").innerHTML = "Welcome, " + name;
+    } else {
+        document.getElementById("welcome").innerHTML = "Welcome, Guest";
+    }
+
+}
+
 function sendMessage() {
 
     let input = document.getElementById("input");
@@ -5,26 +17,30 @@ function sendMessage() {
 
     let text = input.value.trim();
 
-    if(text==="") return;
+    if (text === "") return;
 
     messages.innerHTML += `
-    <div class="user-msg">
-        ${text}
-    </div>
+        <div class="user-msg">${text}</div>
     `;
 
-    setTimeout(function(){
+    setTimeout(function () {
 
         messages.innerHTML += `
-        <div class="ai-msg">
-            Hello! I'm Rehan AI. I'm still under development.
-        </div>
+            <div class="ai-msg">
+                Hello! I'm Rehan AI. I'm still under development.
+            </div>
         `;
 
         messages.scrollTop = messages.scrollHeight;
 
-    },800);
+    }, 500);
 
-    input.value="";
+    input.value = "";
+
+}
+
+function logout() {
+
+    window.location.href = "login.html";
 
 }
