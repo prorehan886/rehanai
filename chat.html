@@ -1,129 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rehan AI Chat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rehan AI Chat</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, sans-serif;
-        }
+<link rel="stylesheet" href="chat.css">
 
-        body{
-            background:#0f172a;
-            color:white;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-        }
-
-        .chat-box{
-            width:90%;
-            max-width:700px;
-            height:80vh;
-            background:#1e293b;
-            border-radius:15px;
-            display:flex;
-            flex-direction:column;
-            overflow:hidden;
-            box-shadow:0 0 20px rgba(0,0,0,.5);
-        }
-
-        .header{
-            background:#2563eb;
-            padding:20px;
-            text-align:center;
-            font-size:28px;
-            font-weight:bold;
-        }
-
-        .messages{
-            flex:1;
-            padding:20px;
-            overflow-y:auto;
-        }
-
-        .message{
-            background:#334155;
-            padding:12px;
-            border-radius:10px;
-            margin-bottom:10px;
-        }
-
-        .input-area{
-            display:flex;
-            padding:15px;
-            background:#111827;
-        }
-
-        input{
-            flex:1;
-            padding:12px;
-            border:none;
-            border-radius:8px;
-            font-size:16px;
-            outline:none;
-        }
-
-        button{
-            margin-left:10px;
-            padding:12px 20px;
-            border:none;
-            border-radius:8px;
-            background:#2563eb;
-            color:white;
-            cursor:pointer;
-            font-size:16px;
-        }
-
-        button:hover{
-            background:#1d4ed8;
-        }
-    </style>
 </head>
+
 <body>
 
-<div class="chat-box">
+<div class="sidebar">
 
-    <div class="header">
-        Rehan AI
-    </div>
+<h2 class="logo">Rehan AI</h2>
 
-    <div class="messages" id="messages">
-        <div class="message">
-            Welcome to Rehan AI. Ask me anything.
-        </div>
-    </div>
+<button class="new-chat">
++ New Chat
+</button>
 
-    <div class="input-area">
-        <input type="text" id="input" placeholder="Type your message...">
-        <button onclick="sendMessage()">Send</button>
-    </div>
+</div>
+
+<div class="main">
+
+<div class="header">
+Rehan AI Assistant
+</div>
+
+<div class="messages" id="messages">
+
+<p>👋 Hello! I'm Rehan AI.</p>
+<p>How can I help you today?</p>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="text"
+id="input"
+placeholder="Message Rehan AI...">
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+</div>
 
 </div>
 
 <script>
+
 function sendMessage(){
 
-    let input=document.getElementById("input");
-    let messages=document.getElementById("messages");
+let input=document.getElementById("input");
 
-    if(input.value.trim()=="") return;
+let messages=document.getElementById("messages");
 
-    messages.innerHTML +=
-    "<div class='message'><b>You:</b> "+input.value+"</div>";
+if(input.value=="") return;
 
-    messages.innerHTML +=
-    "<div class='message'><b>Rehan AI:</b> I received: "+input.value+"</div>";
+messages.innerHTML +=
+"<p><b>You:</b> "+input.value+"</p>";
 
-    input.value="";
-    messages.scrollTop=messages.scrollHeight;
+messages.innerHTML +=
+"<p><b>Rehan AI:</b> I'm still under development.</p>";
+
+input.value="";
+
+messages.scrollTop=messages.scrollHeight;
+
 }
+
 </script>
 
 </body>
