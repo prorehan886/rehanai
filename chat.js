@@ -22,7 +22,13 @@ function sendMessage() {
     messages.innerHTML += `
         <div class="user-msg">${text}</div>
     `;
+document.getElementById("input").addEventListener("keypress", function(event){
 
+    if(event.key === "Enter"){
+        sendMessage();
+    }
+
+});
     setTimeout(function () {
 
         messages.innerHTML += `
