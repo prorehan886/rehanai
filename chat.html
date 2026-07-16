@@ -1,47 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rehan AI Chat</title>
+<div class="main">
 
-<link rel="stylesheet" href="chat.css">
-
-</head>
-<body>
-
-<div class="header">
-
-<div style="display:flex;align-items:center;gap:10px;">
+<div class="center-box">
 
 <img src="logo.png" class="header-logo">
 
-<span id="welcome"></span>
-
-</div>
-
-<div>
-
-<button onclick="window.location.href='settings.html'" class="settings-btn">
-⚙️ Settings
-</button>
-
-<button onclick="logout()" class="logout-btn">
-Logout
-</button>
-
-</div>
-
-</div>
-
-<div id="messages" class="messages"></div>
-
-<div class="chat-box">
+<h1>Rehan AI</h1>
 
 <input
 type="text"
 id="input"
-placeholder="Type your message...">
+placeholder="Ask anything...">
 
 <button onclick="sendMessage()">
 Send
@@ -49,7 +17,6 @@ Send
 
 </div>
 
-<script src="chat.js"></script>
+<div id="messages" class="messages"></div>
 
-</body>
-</html>
+</div>
