@@ -135,3 +135,9 @@ body{
     margin:10px 0;
     max-width:70%;
 }
+.header-logo{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    object-fit:cover;
+}
