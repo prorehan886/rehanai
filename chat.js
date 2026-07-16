@@ -55,3 +55,16 @@ function logout(){
     window.location.href = "login.html";
 
 }
+function addHistory(text){
+
+    let history = document.getElementById("history");
+
+    let item = document.createElement("div");
+
+    item.className = "history-item";
+
+    item.innerText = text;
+
+    history.prepend(item);
+
+}
