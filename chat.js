@@ -7,59 +7,51 @@ window.onload = function () {
 
     loadMessages();
 
+    document.getElementById("input").addEventListener("keypress", function(e){
+
+        if(e.key === "Enter"){
+            sendMessage();
+        }
+
+    });
+
 }
 
 function sendMessage(){
 
-    let input=document.getElementById("input");
-    let messages=document.getElementById("messages");
+    let input = document.getElementById("input");
+    let messages = document.getElementById("messages");
 
-    let text=input.value.trim();
+    let text = input.value.trim();
 
-    if(text==="") return;
+    if(text === "") return;
 
-    messages.innerHTML += `
-    <div class="user-msg">${text}</div>
-    `;
+    messages.innerHTML +=
+    `<div class="user-msg">${text}</div>`;
 
-    messages.innerHTML += `
-    <div class="ai-msg">
-    Hello! I'm Rehan AI. I'm still under development.
-    </div>
-    `;
+    messages.innerHTML +=
+    `<div class="ai-msg">Hello! I'm Rehan AI. I'm still under development.</div>`;
 
-    localStorage.setItem("chatHistory",messages.innerHTML);
+    localStorage.setItem("chatHistory", messages.innerHTML);
 
-    input.value="";
+    input.value = "";
 
-    messages.scrollTop=messages.scrollHeight;
+    messages.scrollTop = messages.scrollHeight;
 
 }
 
 function loadMessages(){
 
-    let history=localStorage.getItem("chatHistory");
+    let history = localStorage.getItem("chatHistory");
 
     if(history){
-
-        document.getElementById("messages").innerHTML=history;
-
+        document.getElementById("messages").innerHTML = history;
     }
 
 }
 
 function logout(){
 
-    window.location.href="login.html";
+    window.location.href = "login.html";
 
 }
-
-document.getElementById("input").addEventListener("keypress",function(e){
-
-    if(e.key==="Enter"){
-
-        sendMessage();
-
-    }
-
-});
