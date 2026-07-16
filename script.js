@@ -1,9 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
+
     const btn = document.querySelector(".btn");
 
-    if (btn) {
-        btn.onclick = function () {
-            window.location.href = "chat.html";
-        };
-    }
+    btn.addEventListener("click", function () {
+
+        window.location.href = "login.html";
+
+    });
+
 });
