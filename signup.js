@@ -9,6 +9,10 @@ function signup(){
         return;
     }
 
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+
     alert("Account Created Successfully!");
 
     window.location.href="login.html";
