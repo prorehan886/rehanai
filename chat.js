@@ -69,3 +69,10 @@ function addHistory(text){
 
 }
 addHistory(text);
+function newChat(){
+
+    document.getElementById("messages").innerHTML = "";
+
+    localStorage.removeItem("chatHistory");
+
+}
