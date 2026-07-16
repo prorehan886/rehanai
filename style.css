@@ -50,3 +50,12 @@ body{
     background:#1d4ed8;
     transform:scale(1.05);
 }
+.logo-img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #2563eb;
+    margin-bottom:20px;
+    box-shadow:0 0 25px rgba(37,99,235,0.5);
+}
